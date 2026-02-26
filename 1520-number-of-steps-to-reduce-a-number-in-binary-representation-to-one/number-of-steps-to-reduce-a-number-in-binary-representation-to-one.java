@@ -2,7 +2,6 @@ class Solution {
     public int numSteps(String s) {
         int count = 0;
         while (s.length() > 1) {
-            //Odd , half 2
             if(s.charAt(s.length()-1) == '1') {
                 s = addOne(s);
             } else {
