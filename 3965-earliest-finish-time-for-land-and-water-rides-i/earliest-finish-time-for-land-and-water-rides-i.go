@@ -1,7 +1,7 @@
 func earliestFinishTime(landStartTime []int, landDuration []int, waterStartTime []int, waterDuration []int) int {
-    ans := 10000
+    ans := math.MaxInt32
 
-    minLandFinish , minWaterFinish := 10000 , 10000
+    minLandFinish , minWaterFinish := math.MaxInt32 , math.MaxInt32
 
     for idx := range landStartTime{
         minLandFinish = min(minLandFinish , landStartTime[idx] + landDuration[idx])
@@ -11,7 +11,6 @@ func earliestFinishTime(landStartTime []int, landDuration []int, waterStartTime 
         minWaterFinish = min(minWaterFinish , waterStartTime[idx] + waterDuration[idx])
     }
 
-    fmt.Println(minLandFinish ,minWaterFinish )
 
     //min finish + duration
     for idx,waterLeadDuration := range waterDuration{
